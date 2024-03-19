@@ -17,14 +17,23 @@ const HeroSection = () => {
   return (
     <section className="hero-section relative w-full h-screen overflow-hidden">
       <div
-        className="absolute top-0 left-0 w-full h-full bg-cover bg-center flex justify-center items-center fade"
+        className="absolute top-0 left-0 w-full h-full bg-cover bg-center flex justify-center items-center fade p-10 "
         style={{
           backgroundImage: `url(${images[backgroundImage]})`,
         }}
       >
-        <div className="flex flex-col gap-5 text-center text-white">
-          <span className="capitalize text-7xl font-bold">Welcome to Gokul Krushi Paryatan Kendra</span>
-          <span className="capitalize text-4xl font-semibold">Visit, Enjoy, Experience and return with wonderful experiences</span>
+        <div>
+          <h1 className="head_text text-center">
+            Discover & Share
+            <br className="max-md:hidden" />
+            <span className="orange_gradient text-center">
+              {" "}
+              AI-Powered Prompts
+            </span>
+          </h1>
+          <p className="desc text-center ">
+            Visit, Enjoy, Experience and return with wonderful experiences
+          </p>
         </div>
       </div>
     </section>
