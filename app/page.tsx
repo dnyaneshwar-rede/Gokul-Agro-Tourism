@@ -6,8 +6,6 @@ import LayoutGrid from "@/components/LayoutGrid";
 import About from "@/components/About";
 import Packages from "@/components/Packages";
 import Map from "@/components/Footer/Map";
-import Faq from "@/components/FAQ/Faq"
-
 export default function Home() {
   return (
       <main>
@@ -15,7 +13,6 @@ export default function Home() {
         <About />
         <Packages/>
         <LayoutGrid  />
-        <Faq />
         <Map />
       </main>
   );
