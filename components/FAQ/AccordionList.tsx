@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import AccordionListItem from "./AccordionListItem";
 import { AccordionListItemProps } from "@/types";
-import data from "../../utils/data.json";
+import { data } from "@/utils/data";
 
 const AccordionList = () => {
   const [accordionListData, setAccordionListData] = useState<AccordionListItemProps[]>([]);

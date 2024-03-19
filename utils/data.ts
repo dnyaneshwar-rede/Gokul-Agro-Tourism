@@ -1,4 +1,5 @@
-[
+import { AccordionListItemProps } from "@/types"
+export const data:AccordionListItemProps[] = [
     {
         "title": "What are the picnic options available at our business?",
         "body": "Our picnic business offers a variety of options to suit your needs. Depending on your preferences, you can choose from intimate picnic setups for small groups or grand picnic experiences for larger gatherings. We ensure that each option is meticulously crafted to provide you with the perfect picnic experience."
