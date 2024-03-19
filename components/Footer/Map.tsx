@@ -10,7 +10,6 @@ const Map = () => {
       allowFullScreen={true}
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
-      id="location"
     ></iframe>
   );
 };
