@@ -6,16 +6,17 @@ import React from "react";
 import LayoutGrid from "@/components/LayoutGrid";
 import AboutUs from "@/components/AboutUs";
 import Packages from "@/components/Packages";
-
+import Map from "@/components/Footer/Map";
 export default function Home() {
   return (
     <>
       <main>
-        
         <Hero />
         <AboutUs />
         <Packages/>
-        <LayoutGrid />
+        <LayoutGrid  />
+        <Map />
+        
       </main>
     </>
   );

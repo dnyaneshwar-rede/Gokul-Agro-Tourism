@@ -31,7 +31,7 @@ const HeroSection = () => {
               AI-Powered Prompts
             </span>
           </h1>
-          <p className="desc text-cente ">
+          <p className="desc text-center ">
             Visit, Enjoy, Experience and return with wonderful experiences
           </p>
         </div>
