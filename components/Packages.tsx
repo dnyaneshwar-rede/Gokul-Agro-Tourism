@@ -1,5 +1,4 @@
 import React from "react";
-import PackageCard from "./PackageCard";
 
 const packageData = {
   title: "Package 3",
