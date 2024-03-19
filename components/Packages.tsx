@@ -2,8 +2,8 @@ import React from "react";
 
 const Packages = () => {
   return (
-    <div className="mt-28">
-      <h1 className="text-center text-6xl max-sm:text-5xl font-bold">
+    <div className="px-6 py-8 bg-slate-200" id="packages">
+      <h1 className="text-left text-6xl max-sm:text-5xl font-bold">
         Packages
       </h1>
       <div className="flex sm:space-x-4 max-sm:space-y-4 max-sm:flex-col">

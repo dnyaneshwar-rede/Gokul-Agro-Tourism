@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const LayoutGrid = () => {
     return (
-        <div className="h-screen py-20 w-full">
+        <div className="h-screen px-6 py-8 w-full" id="photo-gallery">
             <UI_LayoutGrid cards={cards} />
         </div>
     )

@@ -9,7 +9,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({
   companyName = 'Gokul Agri-Tourism and Picnic Centre',
   companyAddress = 'Gokul Krishi Tourism and Picnic Centre, Nandapur, Jalna.',
-  companyMobileNo = '+919423121863',
+  companyMobileNo = '+919922992299',
 }) => {
   return (
     <footer className="bg-gray-800 text-white">
@@ -22,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({
     </div>
     <div className="copyright text-center mt-4">
       <p>&copy; {new Date().getFullYear()} {companyName}. All Rights Reserved.</p>
-      <p>Made with ❤️ by Novodayan</p>
+      <p>Made with ❤️ by Dynaneshwar and team</p>
     </div>
   </div>
 </footer>
