@@ -22,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({
     </div>
     <div className="copyright text-center mt-4">
       <p>&copy; {new Date().getFullYear()} {companyName}. All Rights Reserved.</p>
-      <p>Made with ❤️ by Novodayan</p>
+      <p>Made with ❤️ by Dynaneshwar and team</p>
     </div>
   </div>
 </footer>

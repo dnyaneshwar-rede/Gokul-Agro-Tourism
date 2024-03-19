@@ -2,27 +2,27 @@ export const navLinks = [
     {
         label: "Packages",
         value: "packages",
-        route: "/"
+        route: "#packages"
     },
     {
         label: "Photo Gallery",
         value: "photo-gallery",
-        route: "/"
+        route: "#photo-gallery"
     },
     {
         label: "Activities",
-        value: "activites",
-        route: "/"
+        value: "activities",
+        route: "#activities"
     },
     {
         label: "Location",
         value: "location",
-        route: "/"
+        route: "#location"
     },
     {
         label: "FAQs",
         value: "faqs",
-        route: "/"
+        route: "#faqs"
     }
 ]
 
