@@ -12,7 +12,7 @@ const SpecialOffer = () => {
       <a href="#">
         <Image
           className="p-8 rounded-t-lg"
-          src="/assets/images/holi.jpg"
+          src="/assets/images/holi-offer.jpg"
           alt="product image"
           height={500}
           width={500}
