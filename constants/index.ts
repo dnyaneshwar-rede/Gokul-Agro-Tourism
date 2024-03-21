@@ -10,10 +10,11 @@ export const navLinks = [
         route: "#photo-gallery"
     },
     {
-        label: "Activities",
-        value: "activities",
-        route: "#activities"
+        label: "About Us",
+        value: "about-us",
+        route: "#about-us"
     },
+    
     {
         label: "Location",
         value: "location",

@@ -24,14 +24,13 @@ const HeroSection = () => {
       >
         <div>
           <h1 className="head_text text-center">
-            Discover & Share
+            Gokul Agro Tourism Picnic Spot  
             <br className="max-md:hidden" />
             <span className="orange_gradient text-center">
-              {" "}
-              AI-Powered Prompts
+              A place to relax and enjoy
             </span>
           </h1>
-          <p className="desc text-center ">
+          <p className=" text-center ">
             Visit, Enjoy, Experience and return with wonderful experiences
           </p>
         </div>

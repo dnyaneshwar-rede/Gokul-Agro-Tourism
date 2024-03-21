@@ -5,15 +5,16 @@ import Image from "next/image";
 const PackageCard = () => {
   return (
     <div className="min-w-[350px] px-2 py-4 rounded-lg border-2 border-slate-600 flex flex-col justify-start items-start gap-4">
-      <span className="text-3xl font-bold">Package 1</span>
-      <span className="text-xl font-semibold">$1800</span>
+      <span className="text-3xl font-bold">Shedule</span>
+      <span className="text-xl font-semibold">700 Rs for Adult</span>
+      <span className="text-xl font-semibold">400 Rs for Age (1-10)</span>
       <Link
-        href="https://api.whatsapp.com/send?phone=919689908994"
+        href="https://api.whatsapp.com/send?phone=919423121863"
         target="_blank"
         rel="noopener noreferrer"
         className="w-full px-6 py-3 flex justify-start items-center gap-2 rounded-md bg-lime-400 hover:bg-lime-200 border border-gray-600"
       >
-        <Image
+        <Image className="rounded-md"
           src="/assets/images/whatsapp.png"
           width={30}
           height={30}
