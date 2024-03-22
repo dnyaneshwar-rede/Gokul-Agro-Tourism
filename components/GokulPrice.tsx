@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-const SpecialOffer = () => {
+const GokulPrice = () => {
   return (
     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       {/*
@@ -12,7 +12,7 @@ const SpecialOffer = () => {
       <a href="#">
         <Image
           className="p-8 rounded-t-lg"
-          src="/assets/images/holi-offer.jpg"
+          src="/assets/images/gokul-price.jpg"
           alt="product image"
           height={500}
           width={500}
@@ -94,4 +94,4 @@ const SpecialOffer = () => {
   );
 };
 
-export default SpecialOffer;
+export default GokulPrice;

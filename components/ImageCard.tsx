@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const ImageCard = ({ src, heading, des, tags }: { src: string; heading: string; des: string; tags: string[] }) => {
+const ImageCard = ({ src, heading,  tags }: { src: string; heading: string;  tags: string[] }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg flex flex-wrap">
       {/* Fix the src prop to use a leading slash for relative paths */}
@@ -15,7 +15,7 @@ const ImageCard = ({ src, heading, des, tags }: { src: string; heading: string; 
       />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{heading}</div>
-        <p className="text-gray-700 text-base">{des}</p>
+        {/* <p className="text-gray-700 text-base">{des}</p> */}
       </div>
       <div className="px-6 pt-4 pb-2">
         {tags.map((tag, index) => (

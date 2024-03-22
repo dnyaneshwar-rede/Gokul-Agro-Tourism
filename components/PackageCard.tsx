@@ -32,6 +32,9 @@ const PackageCard = () => {
         </li>
         <li>8:00 AM - 10:00 AM - Breakfast</li>
         <li>10:00 AM - 11:00 AM - Music System & Group Dance with Campfire</li>
+        <strong></strong>
+        <li>8:00 AM - 10:00 AM - Breakfast</li>
+        <li>10:00 AM - 11:00 AM - Music System & Group Dance with Campfire</li>
       </ul>
     </div>
   );

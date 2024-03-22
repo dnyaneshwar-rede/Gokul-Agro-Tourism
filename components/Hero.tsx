@@ -24,7 +24,7 @@ const HeroSection = () => {
       >
         <div>
           <h1 className="head_text text-center">
-            Gokul Agro Tourism Picnic Spot  
+            Gokul Agro Tourism   
             <br className="max-md:hidden" />
             <span className="orange_gradient text-center">
               A place to relax and enjoy
