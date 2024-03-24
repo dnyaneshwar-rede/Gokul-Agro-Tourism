@@ -6,7 +6,7 @@ import Button from "../Button";
 
 const Navbar = () => {
   return (
-    <nav className="max-sm:hidden z-50 w-full fixed px-6 py-2 md:px-8 md:py-4 lg:px-10 lg:py-5 flex justify-between items-center border-b-2 shadow-md bg-white">
+    <nav className=" z-50 w-full fixed px-6 py-2 flex justify-between items-center  bg-white">
       <div className="flex justify-start items-center gap-3">
         {navLinks.map((navlink) => {
           return (
@@ -20,7 +20,7 @@ const Navbar = () => {
           );
         })}
       </div>
-      <div className="sm:hidden md:block">
+      <div>
         <Button
           label="+91 9922992299"
           imgPath="/assets/images/phone.svg"
