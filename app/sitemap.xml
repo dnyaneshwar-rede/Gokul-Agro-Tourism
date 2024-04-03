@@ -8,37 +8,37 @@ export default async function sitemap() {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
             <loc>https://www.gokulagrotourism.co.in/</loc>
-            <lastmod>2021-10-01</lastmod>
+            <lastmod>2024-04-04</lastmod>
             <changefreq>monthly</changefreq>
             <priority>1.0</priority>
             </url>
             <url>
             <loc>https://www.gokulagrotourism.co.in/#about</loc>
-            <lastmod>2021-10-01</lastmod>
+            <lastmod>2024-04-04</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.8</priority>
             </url>
             <url>
             <loc>https://www.gokulagrotourism.co.in/#packages</loc>
-            <lastmod>2021-10-01</lastmod>
+            <lastmod>2024-04-04</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.8</priority>
             </url>
             <url>
             <loc>https://www.gokulagrotourism.co.in/#faq</loc>
-            <lastmod>2021-10-01</lastmod>
+            <lastmod>2024-04-04</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.8</priority>
             </url>
             <url>
             <loc>https://www.gokulagrotourism.co.in/#contact</loc>
-            <lastmod>2021-10-01</lastmod>
+            <lastmod>2024-04-04</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.8</priority>
             </url>
             <url>
             <loc>https://www.gokulagrotourism.co.in/privacy</loc>
-            <lastmod>2021-10-01</lastmod>
+            <lastmod>2024-04-04</lastmod>
             <changefreq>monthly</changefreq>
             <priority>0.8</priority>
             </url>
