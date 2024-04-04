@@ -1,17 +1,22 @@
-import React from "react";
-import Image from "next/image";
+// components/Button.tsx
+
+import React from 'react';
 
 interface ButtonProps {
-    label: string,
-    imgPath: string,
-    alt: string
+  type: 'button' | 'submit' | 'reset' | undefined;
+  className: string;
+  label: string;
+  imgPath: string;
+  alt: string;
 }
 
-const Button = ({label, imgPath, alt}: ButtonProps) => {
+import Image from 'next/image';
+
+const Button: React.FC<ButtonProps> = ({ type, className, label, imgPath, alt }) => {
   return (
-    <button className="px-6 py-3 rounded-full border-2 border-slate-400 bg-blue-400 hover:bg-blue-600 flex items-center gap-2">
-      <Image src={imgPath} width={20} height={20} alt={alt} />
-      <span className="text-sm font-medium">{label}</span>
+    <button type={type} className={className}>
+      <Image src={imgPath} alt={alt} width={4} height={4} className="w-4 h-4 inline-block mr-2" />
+      {label }
     </button>
   );
 };
