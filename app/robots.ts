@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/privacy/',
     },
-    sitemap: 'https://gokulagrotourism.co.in/sitemap.ts',
+    sitemap: 'https://gokulagrotourism.co.in/sitemap.xml',
   }
 }
