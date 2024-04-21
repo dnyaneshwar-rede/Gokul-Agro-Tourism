@@ -33,6 +33,10 @@ const HeroSection = () => {
           <p className=" text-center ">
             Visit, Enjoy, Experience and return with wonderful experiences
           </p>
+          <p className="text-center">
+           Contact Us : 919423121863
+          </p>
+
         </div>
       </div>
     </section>

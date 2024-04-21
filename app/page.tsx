@@ -11,11 +11,13 @@ import Faq from "@/components/FAQ/Faq"
 import ImageGallary from "@/components/ImageGallary";
 import  Activity from "@/components/Activity";
 import Video from "@/components/Video";
+import YoutubeVideo from "@/components/YoutubeVideo";
 
 export default function Home() {
   return (
       <main>
         <Hero />
+        <YoutubeVideo />
         <Video />
         <Activity />
         <About />

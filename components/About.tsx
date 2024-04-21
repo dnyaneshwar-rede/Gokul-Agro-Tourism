@@ -22,9 +22,9 @@ const About = () => {
         {/* Image */}
         <div className="w-full md:w-1/2">
           <Image
-            src="/assets/images/about.jpg"
+            src="/assets/images/GokulHero.jpg"
             alt="Gokul Agro Tourism Image"
-            width={500}
+            width={800}
             height={500}
             id="about-us"
             //layout="fill" // Use layout="fill" for responsive image

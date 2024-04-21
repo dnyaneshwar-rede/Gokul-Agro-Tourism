@@ -11,13 +11,13 @@ const ImageGallery = () => {
       alt : "Paddle Boat Ride in the Farm Pond at Gokul Agro Tourism Center"
     },
 
-    {
+    /*{
       src: "/assets/images/Birthday.jpg",
       heading: "Birthday Celebration at the Farm",
       // des: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec nulla',
       tags: ["photography", "party", "birthday"],
       alt : "Birthday Celebration at the Farm"
-    },
+    }, */
     {
       src: "/assets/images/rest.jpg",
       heading: "rest at the farm house",
