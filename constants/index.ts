@@ -1,15 +1,4 @@
 export const navLinks = [
-   
-    {
-        label: "Packages",
-        value: "packages",
-        route: "#packages"
-    },
-    {
-        label: "Photo Gallery",
-        value: "photo-gallery",
-        route: "#photo-gallery"
-    },
     {
         label: "About Us",
         value: "about-us",
@@ -17,15 +6,26 @@ export const navLinks = [
     },
     
     {
-        label: "Location",
-        value: "location",
-        route: "#location"
+        label: "Packages",
+        value: "packages",
+        route: "#packages"
+    },
+    
+    {
+        label: "Photo Gallery",
+        value: "photo-gallery",
+        route: "#photo-gallery"
     },
     {
         label: "FAQs",
         value: "faqs",
         route: "#faqs"
-    }
+    } , 
+    {
+        label: "Location",
+        value: "location",
+        route: "#location"
+    },
 ]
 
 export const HeroSectionBackgroundImages = [

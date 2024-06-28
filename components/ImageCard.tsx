@@ -11,7 +11,7 @@ const ImageCard = ({ src, heading,  tags }: { src: string; heading: string;  tag
         width={500}
         height={500}
         //layout="fill" // Recommended for responsive layouts
-        //objectFit="cover" // Optionally specify object fit
+        objectFit="cover" // Optionally specify object fit
       />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{heading}</div>

@@ -18,9 +18,7 @@ const HeroSection = () => {
     <section className="hero-section relative w-full h-screen overflow-hidden">
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center flex justify-center items-center fade p-10 "
-        style={{
-          backgroundImage: `url(${images[backgroundImage]})`,
-        }}
+        
       >
         <div>
           <h1 className="head_text text-center">

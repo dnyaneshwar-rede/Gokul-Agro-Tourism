@@ -45,6 +45,8 @@ const Video = () => {
               className="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl"
               src="https://www.youtube.com/embed/nzQ-XD85dag?si=cmKxmFcIvJOFpz3Z"
               title="YouTube video player"
+              height={3840}
+              width={2160}
               //frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
