@@ -1,44 +1,36 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { HeroSectionBackgroundImages } from "@/constants";
+import Link from "next/link";
+import { Spotlight } from "./ui/Spotlight";
+import { Button } from "./ui/moving-border";
 
-const HeroSection = () => {
-  const [backgroundImage, setBackgroundImage] = useState(0);
-  const images = HeroSectionBackgroundImages;
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBackgroundImage((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
+function HeroSection() {
   return (
-    <section className="hero-section relative w-full h-screen overflow-hidden">
-      <div
-        className="absolute top-0 left-0 w-full h-full bg-cover bg-center flex justify-center items-center fade p-10 "
-        
-      >
-        <div>
-          <h1 className="head_text text-center">
-            Gokul Agro Tourism   
-            <br className="max-md:hidden" />
-            <span className="orange_gradient text-center">
-              A place to relax and enjoy
-            </span>
-          </h1>
-          <p className=" text-center ">
-            Visit, Enjoy, Experience and return with wonderful experiences
-          </p>
-          <p className="text-center">
-           Contact Us : 919423121863
-          </p>
+    <div className="h-auto md:h-[40rem] w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-10 md:py-0">
+      <Spotlight
+        className="-top-40 left-0 md:left-60 md:-top-20"
+        fill="white"
+      />
+      <div className="p-4 relative z-10 w-full text-center">
+        <h1 className="mt-20 md:mt-0 text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b orange_gradient text-sky-400">
+          Discover Natures Beauty and Authentic Farm Experiences
+        </h1>
 
+        <p className="mt-4 font-normal text-base md:text-lg text-sky-400 max-w-lg mx-auto">
+          Visit, Enjoy, Experience, and Return with Unforgettable Memories
+        </p>
+        <div className="mt-4">
+          <Link href={"https://api.whatsapp.com/send?phone=919423121863"}>
+            <Button
+              borderRadius="1.75rem"
+              className="bg-white dark:bg-black text-black dark:text-white border-neutral-200 dark:border-slate-800"
+            >
+              Book Your Authentic Experience
+            </Button>
+          </Link>
         </div>
       </div>
-    </section>
+    </div>
   );
-};
+}
 
 export default HeroSection;

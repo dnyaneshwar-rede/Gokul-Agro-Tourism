@@ -5,8 +5,8 @@ const YoutubeVideo = () => {
     <div>
       <iframe
         className="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl"
-        width="560"
-        height="315"
+        width="1920"
+        height="1080"
         src="https://www.youtube.com/embed/ZVq4hQ-o2pU?si=BVYutqWHeZ-RTPWH"
         title="YouTube video player"
         // frameBorder="0"

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const ImageCard = ({ src, heading,  tags }: { src: string; heading: string;  tags: string[] }) => {
+const ImageCard = ({ src, heading,   }: { src: string; heading: string;   }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg flex flex-wrap">
       {/* Fix the src prop to use a leading slash for relative paths */}
@@ -17,16 +17,7 @@ const ImageCard = ({ src, heading,  tags }: { src: string; heading: string;  tag
         <div className="font-bold text-xl mb-2">{heading}</div>
         {/* <p className="text-gray-700 text-base">{des}</p> */}
       </div>
-      <div className="px-6 pt-4 pb-2">
-        {tags.map((tag, index) => (
-          <span
-            key={index}
-            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-          >
-            #{tag}
-          </span>
-        ))}
-      </div>
+      
     </div>
   );
 };

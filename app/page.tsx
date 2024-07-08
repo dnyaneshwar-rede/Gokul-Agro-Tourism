@@ -17,7 +17,7 @@ export default function Home() {
   return (
       <main>
         <Hero />
-        <YoutubeVideo />
+
         <Video />
         <Activity />
         <About />

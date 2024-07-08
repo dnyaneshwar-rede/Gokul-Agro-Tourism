@@ -141,7 +141,7 @@ const ImageGallery = () => {
           key={index}
           src={data.src}
           heading={data.heading}
-          tags={data.tags}
+          //tags={data.tags}
         />
       ))}
     </div>
