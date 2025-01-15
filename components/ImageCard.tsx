@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 
@@ -11,7 +13,7 @@ const ImageCard = ({ src, heading,   }: { src: string; heading: string;   }) => 
         width={500}
         height={500}
         //layout="fill" // Recommended for responsive layouts
-        objectFit="cover" // Optionally specify object fit
+        style={{ objectFit: "cover" }} // Optionally specify object fit
       />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{heading}</div>

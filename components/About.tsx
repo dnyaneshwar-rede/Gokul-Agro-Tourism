@@ -1,10 +1,12 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="px-6 py-8 flex flex-col justify-start items-start gap-6  ">
-      <h1 className="text-6xl font-semibold">Gokul Agro Tourism </h1>
+    <section className="px-6 py-8 flex flex-col justify-center items-center gap-6 " id="about-us">
+      <h1 className="text-4xl font-semibold mb-4">Gokul Agro Tourism </h1>
       <section className="w-full flex flex-wrap md:flex-row justify-between items-start">
         {/* Text Description */}
         <div className="space-y-6 py-6 w-full md:w-1/2">
@@ -22,11 +24,11 @@ const About = () => {
         {/* Image */}
         <div className="w-full md:w-1/2">
           <Image
-            src="/assets/images/GokulHero.jpg"
+            src="/assets/images/GokulHero.webp"
             alt="Gokul Agro Tourism Image"
             width={800}
             height={500}
-            id="about-us"
+            
             //layout="fill" // Use layout="fill" for responsive image
           />
         </div>

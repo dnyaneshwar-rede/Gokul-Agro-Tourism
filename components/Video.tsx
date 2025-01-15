@@ -1,13 +1,15 @@
+"use client";
+
 import React from "react";
 
 const Video = () => {
   return (
     <>
       {" "}
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white dark:bg-gray-600">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex flex-col justify-center">
-            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
+            <h1 className="mb-4 text-4xl font-semibold tracking-tight leading-none text-green-600 md:text-5xl lg:text-4xl dark:text-white">
               Take a peek into the heart of our farm and see what a day of
               agritourism adventures looks like!.
             </h1>
