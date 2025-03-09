@@ -33,7 +33,7 @@ export type ActivitySubCategory = {
     {
       title: "Kids' Zone",
       emoji: "🎠",
-      items: ["Well-equipped Playground (Jingle Pad, Sliders, Spider, Swing, and others)"],
+      items: ["Well-equipped Playground ", "Jingle Pad","Sliders","Swing"],
     },
     {
       title: "Sports and Games",

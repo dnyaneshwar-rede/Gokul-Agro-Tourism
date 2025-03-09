@@ -1,38 +1,61 @@
-"use client";
-
+"use client"
 import React from "react";
 import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="px-6 py-8 flex flex-col justify-center items-center gap-6 " id="about-us">
-      <h1 className="text-4xl font-semibold mb-4">Gokul Agro Tourism </h1>
-      <section className="w-full flex flex-wrap md:flex-row justify-between items-start">
-        {/* Text Description */}
-        <div className="space-y-6 py-6 w-full md:w-1/2">
-          <p className="text-lg leading-normal">
-            Gokul agri-tourism and Adventure Park is an eco-friendly destination to spend your weekends in harmony with nature!! An area surrounded by a lush green environment where you can feel the pure air in your lungs!! A natural cow based farming project where you can enjoy the delicious rural cuisine made on earthen Chulha!! A serene retreat for nature and animal lovers to spend their day at a spot full of biodiversity of flora and fauna!!
-          </p>
-          <p className="text-lg leading-normal">
-            It is a perfect place for a family outing, a school picnic, a corporate team building, a friends get-together, a couples day out, a solo trip, or a day with your pet!!
-          </p>
-          <p className="text-lg leading-normal">
-            It is a perfect place for a family outing, a school picnic, a corporate team building, a friends get-together, a couples day out, a solo trip, or a day with your pet!!
-          </p>
+    <section
+      id="about-us"
+      className="px-6 py-12 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
+    >
+      <div className="container mx-auto flex flex-col items-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-green-700 mb-8 text-center drop-shadow-lg">
+          Welcome to Gokul 
+        </h2>
+        <div className="flex flex-col md:flex-row items-center gap-10">
+          {/* Text Content */}
+          <div className="flex-1">
+            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+              Experience a unique blend of traditional farm life and eco-friendly adventures at Gokul Agro Tourism.
+              Our mission is to reconnect you with nature through authentic rural experiences, sustainable farming,
+              and locally-prepared organic cuisine. Explore hands-on activities, breathtaking landscapes, and a warm
+              community that celebrates the beauty of agro-tourism.
+            </p>
+            <ul className="space-y-4 text-gray-700 dark:text-gray-300 text-lg">
+              <li className="flex items-center">
+                <span className="mr-3 text-2xl">🌿</span> Authentic farm experiences
+              </li>
+              <li className="flex items-center">
+                <span className="mr-3 text-2xl">🍲</span> Organic & locally-prepared cuisine
+              </li>
+              <li className="flex items-center">
+                <span className="mr-3 text-2xl">🏕️</span> Adventure activities & nature trails
+              </li>
+              <li className="flex items-center">
+                <span className="mr-3 text-2xl">🌞</span> Relaxing and rejuvenating escapes
+              </li>
+            </ul>
+          </div>
+
+          {/* Image with 3D-inspired hover effect */}
+          <div
+            className="relative flex-1 w-full h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 hover:scale-105"
+            style={{ perspective: "1200px" }}
+          >
+            <Image
+              src="/assets/images/GokulHero.webp"
+              alt="Gokul Agro Tourism Scenic View"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-700"
+              priority
+            />
+            <div className="absolute inset-0 bg-black opacity-0 hover:opacity-25 transition-opacity duration-500"></div>
+          </div>
         </div>
 
-        {/* Image */}
-        <div className="w-full md:w-1/2">
-          <Image
-            src="/assets/images/GokulHero.webp"
-            alt="Gokul Agro Tourism Image"
-            width={800}
-            height={500}
-            
-            //layout="fill" // Use layout="fill" for responsive image
-          />
-        </div>
-      </section>
+        
+      </div>
     </section>
   );
 };

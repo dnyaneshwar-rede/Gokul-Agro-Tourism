@@ -1,25 +1,46 @@
-"use client";
+"use client"
 
-import React from 'react';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Image from "next/image";
 
-const ImageCard = ({ src, heading,   }: { src: string; heading: string;   }) => {
+const ImageCard = ({ src, heading }: { src: string; heading: string }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const imageSrc = src.startsWith("/") ? src : `/${src}`;
+
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg flex flex-wrap">
-      {/* Fix the src prop to use a leading slash for relative paths */}
-      <Image className='max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'
-        src={src.startsWith('/') ? src : `/${src}`} // Add leading slash if missing
-        alt="image"
-        width={500}
-        height={500}
-        //layout="fill" // Recommended for responsive layouts
-        style={{ objectFit: "cover" }} // Optionally specify object fit
-      />
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{heading}</div>
-        {/* <p className="text-gray-700 text-base">{des}</p> */}
+    <div className="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl bg-white dark:bg-gray-900 h-full">
+      {/* Image wrapper with aspect ratio */}
+      <div className="relative w-full aspect-square overflow-hidden">
+        {/* Loading shimmer effect */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 dark:from-gray-700 dark:via-gray-800 dark:to-gray-700 animate-pulse" />
+        )}
+
+        <Image
+          src={imageSrc}
+          alt={heading || "Image"}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className={`object-cover transition-all duration-700 group-hover:scale-105 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+          onLoad={() => setImageLoaded(true)}
+          priority
+        />
+
+        {/* Subtle hover gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-      
+
+      {/* Card content */}
+      <div className="p-4 text-center">
+        <h3 className="font-bold text-lg md:text-xl text-gray-800 dark:text-white transition-all duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+          {heading}
+        </h3>
+      </div>
+
+      {/* Animated hover underline */}
+      <div className="absolute bottom-0 left-1/2 w-0 h-1 bg-blue-500 group-hover:w-2/3 group-hover:left-1/6 transition-all duration-300 rounded-full" />
     </div>
   );
 };

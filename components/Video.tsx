@@ -1,63 +1,63 @@
-"use client";
-
+"use client"
 import React from "react";
 
 const Video = () => {
   return (
-    <>
-      {" "}
-      <section className="bg-white dark:bg-gray-600">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="flex flex-col justify-center">
-            <h1 className="mb-4 text-4xl font-semibold tracking-tight leading-none text-green-600 md:text-5xl lg:text-4xl dark:text-white">
-              Take a peek into the heart of our farm and see what a day of
-              agritourism adventures looks like!.
-            </h1>
-            <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-              Escape the city and reconnect with nature through agritourism.
-              Experience the joy of farm life, fresh food, and authentic
-              experiences.
-            </p>
-            <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0">
-              <a
-                href="https://api.whatsapp.com/send?phone=919423121863"
-                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+    <section className="bg-gradient-to-b from-white to-green-50 dark:from-gray-800 dark:to-gray-900 py-12 md:py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+        <div className="flex flex-col justify-center space-y-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+            <span className="text-green-600 dark:text-green-400">
+              Take a peek
+            </span>{" "}
+            into the heart of our farm
+            <span className="block mt-4 text-xl md:text-2xl font-semibold text-gray-600 dark:text-gray-300">
+              Experience authentic agritourism adventures
+            </span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+            Escape the city and reconnect with nature through agritourism. 
+            Experience the joy of farm life, fresh food, and authentic experiences 
+            that create lasting memories.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+            <a
+              href="https://api.whatsapp.com/send?phone=919423121863"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 group"
+            >
+              Book Now
+              <svg
+                className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Book Now
-                <svg
-                  className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div>
-            <iframe
-              className="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl aspect-video"
-              src="https://www.youtube.com/embed/nzQ-XD85dag?si=cmKxmFcIvJOFpz3Z"
-              title="YouTube video player"
-              height={3840}
-              width={2160}
-              //frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
           </div>
         </div>
-      </section>
-      ;
-    </>
+
+        <div className="relative group rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+          <iframe
+            className="w-full aspect-video rounded-lg transform group-hover:scale-[1.02] transition-transform duration-300"
+            src="https://www.youtube.com/embed/nzQ-XD85dag?si=cmKxmFcIvJOFpz3Z"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+        </div>
+      </div>
+    </section>
   );
 };
 
