@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
+
 export default function PaymentPage() {
 
   const [booking, setBooking] = useState<any>(null);
@@ -10,7 +11,7 @@ export default function PaymentPage() {
      LOAD BOOKING DATA
   ============================= */
   useEffect(() => {
-    const savedBooking = localStorage.getItem("latestBooking");
+    const savedBooking = localStorage.getItem("pendingBooking");
 
     if (savedBooking) {
       setBooking(JSON.parse(savedBooking));
@@ -26,15 +27,14 @@ export default function PaymentPage() {
   }
 
   /* =============================
-     ✅ YOUR UPI DETAILS
+     YOUR UPI DETAILS
   ============================= */
 
-  const upiId = "64959401@ubin"; //  PUT YOUR REAL UPI HERE
-  const merchantName = "GOKUL KRUSHI PARYATAN K";
+  const upiId = "64959401@ubin"; 
+  const merchantName = "GOKUL KRUSHI PARYATAN";
 
   /* =============================
-     ✅ DYNAMIC UPI LINK
-     (Amount comes automatically)
+     DYNAMIC UPI LINK
   ============================= */
 
   const upiLink = `upi://pay?pa=${upiId}&pn=${merchantName}&am=${booking.totalPrice}&cu=INR`;
@@ -56,7 +56,7 @@ export default function PaymentPage() {
           Amount: ₹{booking.totalPrice}
         </p>
 
-        {/* ✅ DYNAMIC QR */}
+        {/* QR CODE */}
         <QRCodeSVG value={upiLink} size={220} />
 
         <p className="mt-6 text-sm text-gray-600">

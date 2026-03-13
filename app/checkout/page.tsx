@@ -12,26 +12,17 @@ function CheckoutContent() {
   const searchParams = useSearchParams();
 
   /* ===============================
-     LOGIN PROTECTION
+     GET PACKAGE FROM URL
   =============================== */
-  const [checkingAuth, setCheckingAuth] = useState(true);
 
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const packageId = searchParams.get("package");
 
-    if (!isLoggedIn) {
-      router.push(
-        `/login?redirect=${window.location.pathname + window.location.search}`
-      );
-    } else {
-      setCheckingAuth(false);
-    }
-  }, [router]);
+  const selectedPackage: Package | null =
+    packages.find((pkg: Package) => pkg.id === packageId) || null;
 
   /* ===============================
-     GET SELECTED PACKAGE
+     REDIRECT IF NOT LOGGED IN
   =============================== */
-  const packageId = searchParams.get("package");
 
   useEffect(() => {
     if (!user) {
@@ -39,13 +30,10 @@ function CheckoutContent() {
     }
   }, [user, router, packageId]);
 
-  const selectedPackage: Package | undefined = packages.find(
-    (pkg: Package) => pkg.id === packageId
-  );
-
   /* ===============================
      FORM STATES
   =============================== */
+
   const [adults, setAdults] = useState<number>(1);
   const [children, setChildren] = useState<number>(0);
 
@@ -56,6 +44,7 @@ function CheckoutContent() {
   /* ===============================
      PRICE CALCULATION
   =============================== */
+
   const totalPrice = useMemo(() => {
     if (!selectedPackage) return 0;
 
@@ -68,6 +57,7 @@ function CheckoutContent() {
   /* ===============================
      PHONE VALIDATION
   =============================== */
+
   const handlePhoneChange = (value: string) => {
     const numbersOnly = value.replace(/\D/g, "");
 
@@ -77,15 +67,8 @@ function CheckoutContent() {
   };
 
   /* ===============================
-     WAIT WHILE AUTH CHECKING
+     LOADING / ERROR STATES
   =============================== */
-  if (checkingAuth) {
-    return (
-      <div className="min-h-screen flex justify-center items-center">
-        Checking login...
-      </div>
-    );
-  }
 
   if (!user) {
     return (
@@ -104,8 +87,42 @@ function CheckoutContent() {
   }
 
   /* ===============================
+     PROCEED TO PAYMENT
+  =============================== */
+
+  const handlePayment = () => {
+    if (!name || !email || !phone) {
+      alert("Please fill all traveller details");
+      return;
+    }
+
+    if (phone.length !== 10) {
+      alert("Phone number must be 10 digits");
+      return;
+    }
+
+    const booking = {
+      bookingId: "BK" + Date.now(),
+      packageId: selectedPackage.id,
+      packageName: selectedPackage.name,
+      adults,
+      children,
+      totalPrice,
+      name,
+      email,
+      phone,
+      date: new Date().toLocaleString(),
+    };
+
+    localStorage.setItem("pendingBooking", JSON.stringify(booking));
+
+    router.push("/payment");
+  };
+
+  /* ===============================
      UI
   =============================== */
+
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-start py-10">
       <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-xl">
@@ -184,36 +201,7 @@ function CheckoutContent() {
 
         <button
           className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition"
-          onClick={() => {
-            if (!name || !email || !phone) {
-              alert("Please fill all traveller details");
-              return;
-            }
-
-            if (phone.length !== 10) {
-              alert("Phone number must be 10 digits");
-              return;
-            }
-
-            const booking = {
-              bookingId: "BK" + Date.now(),
-              packageName: selectedPackage.name,
-              adults,
-              children,
-              totalPrice,
-              name,
-              email,
-              phone,
-              date: new Date().toLocaleString(),
-            };
-
-            localStorage.setItem(
-              "pendingBooking",
-              JSON.stringify(booking)
-            );
-
-            router.push("/payment");
-          }}
+          onClick={handlePayment}
         >
           Proceed to Payment
         </button>
