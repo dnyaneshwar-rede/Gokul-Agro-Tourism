@@ -1,18 +1,18 @@
 "use client";
 
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
-import { useEffect, useState, useMemo } from "react";
 import { packages } from "@/constants/packages";
 import { Package } from "@/types";
 
-export default function CheckoutPage() {
+function CheckoutContent() {
   const { user } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
 
   /* ===============================
-     ✅ LOGIN PROTECTION
+     LOGIN PROTECTION
   =============================== */
   const [checkingAuth, setCheckingAuth] = useState(true);
 
@@ -29,7 +29,7 @@ export default function CheckoutPage() {
   }, [router]);
 
   /* ===============================
-     ✅ GET SELECTED PACKAGE
+     GET SELECTED PACKAGE
   =============================== */
   const packageId = searchParams.get("package");
 
@@ -44,7 +44,7 @@ export default function CheckoutPage() {
   );
 
   /* ===============================
-     ✅ FORM STATES
+     FORM STATES
   =============================== */
   const [adults, setAdults] = useState<number>(1);
   const [children, setChildren] = useState<number>(0);
@@ -54,7 +54,7 @@ export default function CheckoutPage() {
   const [phone, setPhone] = useState("");
 
   /* ===============================
-     ✅ PRICE CALCULATION
+     PRICE CALCULATION
   =============================== */
   const totalPrice = useMemo(() => {
     if (!selectedPackage) return 0;
@@ -66,20 +66,18 @@ export default function CheckoutPage() {
   }, [adults, children, selectedPackage]);
 
   /* ===============================
-     ✅ PHONE VALIDATION
+     PHONE VALIDATION
   =============================== */
   const handlePhoneChange = (value: string) => {
-    // allow only numbers
     const numbersOnly = value.replace(/\D/g, "");
 
-    // max 10 digits
     if (numbersOnly.length <= 10) {
       setPhone(numbersOnly);
     }
   };
 
   /* ===============================
-     ✅ WAIT WHILE AUTH CHECKING
+     WAIT WHILE AUTH CHECKING
   =============================== */
   if (checkingAuth) {
     return (
@@ -106,7 +104,7 @@ export default function CheckoutPage() {
   }
 
   /* ===============================
-     ✅ UI
+     UI
   =============================== */
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-start py-10">
@@ -116,7 +114,6 @@ export default function CheckoutPage() {
           Checkout
         </h1>
 
-        {/* Selected Package */}
         <div className="mb-6">
           <p className="text-lg font-semibold">Selected Package:</p>
           <p className="text-green-600 font-bold text-xl">
@@ -124,7 +121,6 @@ export default function CheckoutPage() {
           </p>
         </div>
 
-        {/* Adults */}
         <div className="mb-4">
           <label className="block mb-1 font-medium">
             Number of Adults
@@ -138,7 +134,6 @@ export default function CheckoutPage() {
           />
         </div>
 
-        {/* Children */}
         <div className="mb-6">
           <label className="block mb-1 font-medium">
             Number of Children
@@ -152,7 +147,6 @@ export default function CheckoutPage() {
           />
         </div>
 
-        {/* Traveller Details */}
         <h2 className="text-xl font-semibold mb-3">
           Traveller Details
         </h2>
@@ -181,7 +175,6 @@ export default function CheckoutPage() {
           onChange={(e) => handlePhoneChange(e.target.value)}
         />
 
-        {/* Total Price */}
         <div className="bg-gray-50 p-4 rounded-lg mb-6">
           <p className="text-lg font-semibold">Total Amount:</p>
           <p className="text-2xl font-bold text-green-600">
@@ -189,7 +182,6 @@ export default function CheckoutPage() {
           </p>
         </div>
 
-        {/* PAYMENT BUTTON */}
         <button
           className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition"
           onClick={() => {
@@ -215,13 +207,11 @@ export default function CheckoutPage() {
               date: new Date().toLocaleString(),
             };
 
-            // ✅ SAVE TEMP BOOKING
             localStorage.setItem(
               "pendingBooking",
               JSON.stringify(booking)
             );
 
-            // ✅ GO TO PAYMENT PAGE
             router.push("/payment");
           }}
         >
@@ -230,5 +220,13 @@ export default function CheckoutPage() {
 
       </div>
     </div>
+  );
+}
+
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
+      <CheckoutContent />
+    </Suspense>
   );
 }

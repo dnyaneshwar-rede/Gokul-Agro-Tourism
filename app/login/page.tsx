@@ -1,14 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter();
   const params = useSearchParams();
-
-  // ✅ get login function from AuthContext
   const { login } = useAuth();
 
   const redirect = params.get("redirect") || "/";
@@ -19,28 +17,24 @@ export default function LoginPage() {
   const handleLogin = () => {
     const savedUser = localStorage.getItem("user");
 
-    // ❌ no account
     if (!savedUser) {
       alert("No account found. Please Sign Up first.");
-      router.push("/register");
+      router.push("/signup");
       return;
     }
 
     const user = JSON.parse(savedUser);
 
-    // ✅ check credentials
     if (user.email === email && user.password === password) {
 
-      // ✅ LOGIN THROUGH CONTEXT
-     login({
-  name: user.name,
-  email: user.email,
-  role: user.role || "user",
-});
+      login({
+        name: user.name,
+        email: user.email,
+        role: user.role || "user",
+      });
 
       alert("Login Successful ✅");
 
-      // ✅ redirect back (checkout or home)
       router.push(redirect);
 
     } else {
@@ -50,14 +44,12 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100">
-
       <div className="bg-white p-8 rounded-xl shadow-lg w-[400px]">
 
         <h1 className="text-2xl font-bold mb-6 text-center">
           Login
         </h1>
 
-        {/* EMAIL */}
         <input
           type="email"
           placeholder="Email"
@@ -66,7 +58,6 @@ export default function LoginPage() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        {/* PASSWORD */}
         <input
           type="password"
           placeholder="Password"
@@ -75,7 +66,6 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        {/* LOGIN BUTTON */}
         <button
           onClick={handleLogin}
           className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
@@ -83,12 +73,11 @@ export default function LoginPage() {
           Login
         </button>
 
-        {/* REGISTER LINK */}
         <p className="text-center mt-4">
           New user?{" "}
           <span
             className="text-blue-600 cursor-pointer"
-            onClick={() => router.push("/register")}
+            onClick={() => router.push("/signup")}
           >
             Register
           </span>
@@ -96,5 +85,13 @@ export default function LoginPage() {
 
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
+      <LoginContent />
+    </Suspense>
   );
 }
