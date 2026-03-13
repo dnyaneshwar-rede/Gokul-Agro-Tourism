@@ -57,4 +57,51 @@ export const packages: Package[] = [
     ],
     image: 'https://images.unsplash.com/photo-1510797215324-95aa89f43c33?q=80&w=1600',
   },
+  {
+  id: 'holi-special-2026',
+  name: 'Holi Dhulivandan Special 2026',
+  description:
+    'Family Holi celebration with live music, rain dance, mud bath, swimming pools and unlimited fun.',
+  basePrice: 599,
+  childPrice: 599,
+  features: [
+    'Live Music',
+    'Group Dance & Zumba',
+    'Natural Colors Only',
+    'Mud Bath',
+    'Special Swimming Tank',
+    '3+1 Swimming Pools',
+    'Boating',
+    'Zip Line & Ropeway',
+    'Horse & Camel Ride',
+    'Train Ride',
+    'Breakfast + Snacks + Lunch'
+  ],
+  image:
+    'https://images.unsplash.com/photo-1584473457409-ce1a5dfe3a14?q=80&w=1600',
+},
+
+{
+  id: 'day-picnic-package',
+  name: 'Gokul Krushi Paryatan Day Picnic',
+  description:
+    'Full day agro tourism experience with unlimited food and all adventure activities.',
+  basePrice: 799,
+  childPrice: 499,
+  features: [
+    'Swimming Pool & Rain Dance',
+    'Zip Line & Zip Cycle',
+    'Train Ride',
+    'Camel & Horse Ride',
+    'Magic Show',
+    'Boating',
+    'Indoor & Outdoor Games',
+    'Unlimited Breakfast',
+    'Hurda Party',
+    'Traditional Lunch',
+    'High Tea'
+  ],
+  image:
+    'https://images.unsplash.com/photo-1510797215324-95aa89f43c33?q=80&w=1600',
+},
 ];
