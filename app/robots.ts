@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/privacy/',
+      disallow: '/privacy-policy/',
     },
-    sitemap: 'https://gokulagrotourism.co.in/sitemap.xml',
+    sitemap: 'https://gokulagrotourism.com/sitemap.xml',
   }
 }
